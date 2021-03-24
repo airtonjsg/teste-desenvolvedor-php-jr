@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('clients_id');
+            $table->foreign('clients_id')->reference('id')->on('clients');
+            
             
             $table->unsignedSmallInteger('amount');
 

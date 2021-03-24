@@ -13,11 +13,8 @@ class CrateOrderProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('orderproduct', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
 
-            $table->unsignedInteger('clients_id');
-            $table->foreign('clients_id')->reference('id')->on('clients');
-            
             $table->unsignedSmallInteger('products_id');
             $table->foreign('products_id')->reference('id')->on('products');
 
@@ -31,6 +28,6 @@ class CrateOrderProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orderproduct');
+        Schema::dropIfExists('order_product');
     }
 }
