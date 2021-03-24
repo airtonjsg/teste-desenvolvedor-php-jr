@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function clients(){
+    public function client(){
         return $this->belongTo(Client::class);
-    }
-
-    public function productss(){
-        return $this->belongToMany(Product::class);
     }
 }

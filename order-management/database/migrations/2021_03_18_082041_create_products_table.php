@@ -16,11 +16,6 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('orders_id');
-            $table->foreign('orders_id')
-                ->references('id')->on('orders')
-                ->onDelete('cascade');
-
             $table->string('name', 100);
             $table->string('barcode',20);
             $table->unsignedSmallInteger('amount');

@@ -8,8 +8,4 @@ class Product extends Model
 {
     protected $fillable = ['orders_id', 'name', 'barcode', 'amount', 'unit-price', 'created_at',
      'updated_at'];
-
-    public function orders(){
-        return $this->belongToMany(Order::class);
-    }
 }
