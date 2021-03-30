@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Client;
 
 class ClientTableSeeder extends Seeder
 {
@@ -11,6 +12,12 @@ class ClientTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Cliente::class,5)->create;
+        //factory(Cliente::class,5)->create;
+
+        Client::create([
+            'name' => 'admin',
+            'email' => 'admin@email.com',
+            'cpf' => rand(10000000000, 99999999999),
+        ]);
     }
 }
