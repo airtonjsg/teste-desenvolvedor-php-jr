@@ -52,7 +52,8 @@ class ClientController extends Controller
 
         Product::create($data);
 
-        return redirect('client');
+        flash('Cliente Criado com Sucesso!')->success();
+        return redirect()->route('client.index');
     }
 
     /**
@@ -92,7 +93,8 @@ class ClientController extends Controller
 
         $product->save();
 
-        return redirect(‘client’);
+        flash('Cliente Alterado com Sucesso!')->success();
+	    return redirect()->route('client.index');
     }
 
     /**
@@ -104,6 +106,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         $client->delete();
-        return redirect(‘client’);
+
+        flash('Cliente Excluido com Sucesso!')->success();
+	    return redirect()->route('client.index');        
     }
 }

@@ -23,12 +23,11 @@
                     <td>
                         <div class="btn-group">
                             <a href="{{route('client.edit', ['client' => $client->id])}}" class="mr-2"><i class="fa fa-edit">&nbsp;</i></a>
-                            {{-- <a href="{{route('client.destroy', ['client' => $client->id])}}" class="mr-2"><i class="far fa-trash-alt">&nbsp;</i></a> --}}
-                            {{-- <form action="{{route('client.destroy', ['client' => $p->id])}}" method="post">
+                            <form action="{{route('client.destroy', ['client' => $p->id])}}" method="post">
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit" class="mr-2"><i class="far fa-trash-alt"></i></button>
-                            </form> --}}
+                            </form>
                         </div>
                     </td>
                 </tr>
