@@ -19,8 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('client', 'Admin\ClientController');
-// Route::post('client','Admin\ClientController.store')->name('client.store');
-// Route::get('client','Admin\ClientController.index')->name('client.index');
-// Route::get('client/{client}','Admin\ClientController.show')->name('client.show');
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
+    Route::resource('client', 'ClientController');
+});
 

@@ -8,10 +8,10 @@ use App\Http\Controllers\Controller;
 
 class ClientController extends Controller
 {
-    private $clients;
+    private $client;
 
     public function __construct(Client $client){
-        $this->clients = $client;
+        $this->client = $client;
     }
 
     /**
@@ -21,7 +21,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = $this->clients->paginate(10);
+        $clients = $this->client->paginate(10);
 
         return view('admin.client.index', compact('clients'));
     }
