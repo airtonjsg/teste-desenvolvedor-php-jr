@@ -17,7 +17,7 @@ class ClientTableSeeder extends Seeder
         Client::create([
             'name' => 'admin',
             'email' => 'admin@email.com',
-            'cpf' => rand(10000000000, 99999999999),
+            'cpf' => str_random(11),
         ]);
     }
 }
